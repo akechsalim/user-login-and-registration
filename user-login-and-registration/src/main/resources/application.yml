@@ -16,7 +16,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
-
+  jmx:
+    enabled: true
   mail:
     host: localhost
     port: 1025
