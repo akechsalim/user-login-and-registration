@@ -17,7 +17,6 @@ public class RegistrationRequest {
     }
 
     public String getFirstName() {
-
         return firstName;
     }
 
