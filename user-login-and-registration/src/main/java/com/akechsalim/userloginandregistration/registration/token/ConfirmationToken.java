@@ -16,7 +16,7 @@ public class ConfirmationToken {
     @Column(nullable = false)
     private LocalDateTime createdAt;
     @Column(nullable = false)
-    private LocalDateTime expiredAt;
+    private LocalDateTime expiresAt;
     private LocalDateTime confirmedAt;
     @ManyToOne
     @JoinColumn(nullable = false,name = "app_user_id")
@@ -25,10 +25,10 @@ public class ConfirmationToken {
     public ConfirmationToken() {
     }
 
-    public ConfirmationToken(String token, LocalDateTime createdAt, LocalDateTime expiredAt, AppUser appUser) {
+    public ConfirmationToken(String token, LocalDateTime createdAt, LocalDateTime expiresAt, AppUser appUser) {
         this.token = token;
         this.createdAt = createdAt;
-        this.expiredAt = expiredAt;
+        this.expiresAt = expiresAt;
         this.appUser = appUser;
     }
 
@@ -56,12 +56,12 @@ public class ConfirmationToken {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getExpiredAt() {
-        return expiredAt;
+    public LocalDateTime getExpiresAt() {
+        return expiresAt;
     }
 
-    public void setExpiredAt(LocalDateTime expiredAt) {
-        this.expiredAt = expiredAt;
+    public void setExpiresAt(LocalDateTime expiredAt) {
+        this.expiresAt = expiredAt;
     }
 
     public LocalDateTime getConfirmedAt() {
@@ -70,5 +70,13 @@ public class ConfirmationToken {
 
     public void setConfirmedAt(LocalDateTime confirmedAt) {
         this.confirmedAt = confirmedAt;
+    }
+
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
     }
 }
