@@ -23,9 +23,9 @@ public class EmailService implements EmailSender {
     public void send(String to, String email) {
         try {
             MimeMessage mimeMessage = mailSender.createMimeMessage();
-            MimeMessageHelper helper = new MimeMessageHelper(mimeMessage,"utf-8");
+            MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
 
-            helper.setText(email,true);
+            helper.setText(email, true);
             helper.setTo(to);
             helper.setSubject("Confirm your email");
             helper.setFrom("hello@akechsalim.com");
@@ -35,3 +35,5 @@ public class EmailService implements EmailSender {
         }
 
     }
+}
+
